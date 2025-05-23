@@ -1,2 +1,9 @@
-import { createClient } from "next-sanity";
-//1638
+import { createClient } from 'next-sanity';
+
+export const client = createClient ({
+    projectId: '',
+    dataset: '',
+    apiVersion: '',
+})
+
+// 1650
