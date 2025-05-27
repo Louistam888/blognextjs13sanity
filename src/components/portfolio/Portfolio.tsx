@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import { client } from "../../utils/configSanity";
-import { get } from "http";
+import { PortableText } from "@portabletext/react";
 
 interface IPortfolio {
   _id: string;
@@ -23,7 +23,20 @@ const Portfolio = async () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.selectTitle}>Portfolio</h1>
-      <div className={styles.items}></div>
+      <div className={styles.items}>
+        {data?.map((item) => (
+          <div key={item?._id} className={styles.item}>
+            <div>
+              <span className={styles.title}>{item?.title}</span>
+            </div>
+            <div>
+              <span className={styles.desc}>
+                <PortableText value={item?.description} />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
