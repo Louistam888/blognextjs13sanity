@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./page.module.css";
 import { client } from "../../utils/configSanity";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextBlock } from "@portabletext/react";
 
 interface IPortfolio {
   _id: string;
   title: string;
-  description: any; //textbox
+  description: PortableTextBlock[]; //textbox
   _createdAt: string;
 }
 
